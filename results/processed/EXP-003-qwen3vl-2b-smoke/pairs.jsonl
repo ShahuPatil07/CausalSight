@@ -1,0 +1,1 @@
+{"causal_answer_update_success": true, "expected": {"causal": "blue", "nuisance": "yellow", "original": "yellow"}, "nuisance_answer_preserved": true, "original_correct": true, "pair_id": "pilot-00000", "predictions": {"causal": "blue", "nuisance": "yellow", "original": "yellow"}, "split": "development", "statuses": {"causal": "ok", "nuisance": "ok", "original": "ok"}}

@@ -1,0 +1,27 @@
+{
+  "split": "development",
+  "pairs": 1,
+  "original_accuracy": {
+    "numerator": 1,
+    "denominator": 1,
+    "rate": 1.0
+  },
+  "causal_answer_update_success": {
+    "numerator": 1,
+    "denominator": 1,
+    "rate": 1.0
+  },
+  "nuisance_answer_preservation": {
+    "numerator": 1,
+    "denominator": 1,
+    "rate": 1.0
+  },
+  "conditioned_on_original_correct": {
+    "pairs": 1,
+    "causal_answer_update_success": 1.0,
+    "nuisance_answer_preservation": 1.0,
+    "joint_success": 1.0
+  },
+  "parser": "one unambiguous occurrence from the closed color set {red, blue, green, yellow}; otherwise unparsed",
+  "interpretation_note": "Descriptive pilot metrics; these are not a validated single measure of visual grounding."
+}
