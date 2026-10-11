@@ -1,0 +1,65 @@
+{
+  "families": 144,
+  "rows": 576,
+  "images": 432,
+  "manifest_sha256": "f4a20ab4aae2c0880f42f3d59f63d5f5b2cb4f4480ef6defb3490f0b1b1ef59d",
+  "families_by_split": {
+    "development": 16,
+    "evaluation": 128
+  },
+  "evaluation_cells": 64,
+  "families_per_evaluation_cell": 2,
+  "transition_counts": {
+    "development_causal": {
+      "blue->green": 1,
+      "blue->red": 1,
+      "blue->yellow": 2,
+      "green->blue": 1,
+      "green->red": 2,
+      "green->yellow": 1,
+      "red->blue": 2,
+      "red->yellow": 2,
+      "yellow->blue": 2,
+      "yellow->green": 1,
+      "yellow->red": 1
+    },
+    "development_nuisance": {
+      "blue->yellow": 4,
+      "green->blue": 3,
+      "green->red": 1,
+      "red->blue": 3,
+      "red->green": 1,
+      "yellow->green": 2,
+      "yellow->red": 2
+    },
+    "evaluation_causal": {
+      "blue->green": 10,
+      "blue->red": 11,
+      "blue->yellow": 11,
+      "green->blue": 11,
+      "green->red": 11,
+      "green->yellow": 10,
+      "red->blue": 10,
+      "red->green": 11,
+      "red->yellow": 11,
+      "yellow->blue": 11,
+      "yellow->green": 11,
+      "yellow->red": 10
+    },
+    "evaluation_nuisance": {
+      "blue->green": 10,
+      "blue->red": 11,
+      "blue->yellow": 11,
+      "green->blue": 11,
+      "green->red": 11,
+      "green->yellow": 10,
+      "red->blue": 10,
+      "red->green": 11,
+      "red->yellow": 11,
+      "yellow->blue": 11,
+      "yellow->green": 11,
+      "yellow->red": 10
+    }
+  },
+  "checks": "Exact rendered pixels, single color changes, question switches, labels, unique original inputs, split separation and factorial balance passed."
+}

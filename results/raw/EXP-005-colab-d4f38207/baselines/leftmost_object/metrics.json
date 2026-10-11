@@ -1,0 +1,739 @@
+{
+  "metric_version": "binding-1.0.0",
+  "split": "evaluation",
+  "families": 128,
+  "original_accuracy": {
+    "numerator": 80,
+    "denominator": 128,
+    "rate": 0.625
+  },
+  "causal_target_accuracy": {
+    "numerator": 80,
+    "denominator": 128,
+    "rate": 0.625
+  },
+  "correct_causal_update": {
+    "numerator": 64,
+    "denominator": 128,
+    "rate": 0.5
+  },
+  "nuisance_answer_preservation": {
+    "numerator": 64,
+    "denominator": 128,
+    "rate": 0.5
+  },
+  "correct_nuisance_preservation": {
+    "numerator": 64,
+    "denominator": 128,
+    "rate": 0.5
+  },
+  "consistently_wrong_nuisance_preservation": {
+    "numerator": 0,
+    "denominator": 128,
+    "rate": 0.0
+  },
+  "complete_triplet_correctness": {
+    "numerator": 64,
+    "denominator": 128,
+    "rate": 0.5
+  },
+  "question_switch_correct_different_colors": {
+    "numerator": 0,
+    "denominator": 96,
+    "rate": 0.0
+  },
+  "question_switch_correct_same_colors": {
+    "numerator": 32,
+    "denominator": 32,
+    "rate": 1.0
+  },
+  "conditioned_on_original_correct": {
+    "correct_causal_update": {
+      "numerator": 64,
+      "denominator": 80,
+      "rate": 0.8
+    },
+    "nuisance_answer_preservation": {
+      "numerator": 64,
+      "denominator": 80,
+      "rate": 0.8
+    },
+    "complete_triplet_correctness": {
+      "numerator": 64,
+      "denominator": 80,
+      "rate": 0.8
+    }
+  },
+  "requests": {
+    "expected": 512,
+    "saved": 512,
+    "ok": 512,
+    "error": 0,
+    "missing": 0,
+    "parse_failure": 0,
+    "empty_final_answer": 0,
+    "budget_reached": 0
+  },
+  "parser": "Exactly one color word, optionally followed by . or !; no prose or thinking-field extraction.",
+  "interpretation": "Descriptive results for a fixed balanced synthetic grid; no population confidence intervals or general grounding claim.",
+  "strata": {
+    "target_shape": {
+      "circle": {
+        "families": 64,
+        "original_accuracy": {
+          "numerator": 40,
+          "denominator": 64,
+          "rate": 0.625
+        },
+        "causal_target_accuracy": {
+          "numerator": 40,
+          "denominator": 64,
+          "rate": 0.625
+        },
+        "correct_causal_update": {
+          "numerator": 32,
+          "denominator": 64,
+          "rate": 0.5
+        },
+        "nuisance_answer_preservation": {
+          "numerator": 32,
+          "denominator": 64,
+          "rate": 0.5
+        },
+        "correct_nuisance_preservation": {
+          "numerator": 32,
+          "denominator": 64,
+          "rate": 0.5
+        },
+        "consistently_wrong_nuisance_preservation": {
+          "numerator": 0,
+          "denominator": 64,
+          "rate": 0.0
+        },
+        "complete_triplet_correctness": {
+          "numerator": 32,
+          "denominator": 64,
+          "rate": 0.5
+        },
+        "question_switch_correct_different_colors": {
+          "numerator": 0,
+          "denominator": 48,
+          "rate": 0.0
+        },
+        "question_switch_correct_same_colors": {
+          "numerator": 16,
+          "denominator": 16,
+          "rate": 1.0
+        },
+        "conditioned_on_original_correct": {
+          "correct_causal_update": {
+            "numerator": 32,
+            "denominator": 40,
+            "rate": 0.8
+          },
+          "nuisance_answer_preservation": {
+            "numerator": 32,
+            "denominator": 40,
+            "rate": 0.8
+          },
+          "complete_triplet_correctness": {
+            "numerator": 32,
+            "denominator": 40,
+            "rate": 0.8
+          }
+        }
+      },
+      "square": {
+        "families": 64,
+        "original_accuracy": {
+          "numerator": 40,
+          "denominator": 64,
+          "rate": 0.625
+        },
+        "causal_target_accuracy": {
+          "numerator": 40,
+          "denominator": 64,
+          "rate": 0.625
+        },
+        "correct_causal_update": {
+          "numerator": 32,
+          "denominator": 64,
+          "rate": 0.5
+        },
+        "nuisance_answer_preservation": {
+          "numerator": 32,
+          "denominator": 64,
+          "rate": 0.5
+        },
+        "correct_nuisance_preservation": {
+          "numerator": 32,
+          "denominator": 64,
+          "rate": 0.5
+        },
+        "consistently_wrong_nuisance_preservation": {
+          "numerator": 0,
+          "denominator": 64,
+          "rate": 0.0
+        },
+        "complete_triplet_correctness": {
+          "numerator": 32,
+          "denominator": 64,
+          "rate": 0.5
+        },
+        "question_switch_correct_different_colors": {
+          "numerator": 0,
+          "denominator": 48,
+          "rate": 0.0
+        },
+        "question_switch_correct_same_colors": {
+          "numerator": 16,
+          "denominator": 16,
+          "rate": 1.0
+        },
+        "conditioned_on_original_correct": {
+          "correct_causal_update": {
+            "numerator": 32,
+            "denominator": 40,
+            "rate": 0.8
+          },
+          "nuisance_answer_preservation": {
+            "numerator": 32,
+            "denominator": 40,
+            "rate": 0.8
+          },
+          "complete_triplet_correctness": {
+            "numerator": 32,
+            "denominator": 40,
+            "rate": 0.8
+          }
+        }
+      }
+    },
+    "target_side": {
+      "left": {
+        "families": 64,
+        "original_accuracy": {
+          "numerator": 64,
+          "denominator": 64,
+          "rate": 1.0
+        },
+        "causal_target_accuracy": {
+          "numerator": 64,
+          "denominator": 64,
+          "rate": 1.0
+        },
+        "correct_causal_update": {
+          "numerator": 64,
+          "denominator": 64,
+          "rate": 1.0
+        },
+        "nuisance_answer_preservation": {
+          "numerator": 64,
+          "denominator": 64,
+          "rate": 1.0
+        },
+        "correct_nuisance_preservation": {
+          "numerator": 64,
+          "denominator": 64,
+          "rate": 1.0
+        },
+        "consistently_wrong_nuisance_preservation": {
+          "numerator": 0,
+          "denominator": 64,
+          "rate": 0.0
+        },
+        "complete_triplet_correctness": {
+          "numerator": 64,
+          "denominator": 64,
+          "rate": 1.0
+        },
+        "question_switch_correct_different_colors": {
+          "numerator": 0,
+          "denominator": 48,
+          "rate": 0.0
+        },
+        "question_switch_correct_same_colors": {
+          "numerator": 16,
+          "denominator": 16,
+          "rate": 1.0
+        },
+        "conditioned_on_original_correct": {
+          "correct_causal_update": {
+            "numerator": 64,
+            "denominator": 64,
+            "rate": 1.0
+          },
+          "nuisance_answer_preservation": {
+            "numerator": 64,
+            "denominator": 64,
+            "rate": 1.0
+          },
+          "complete_triplet_correctness": {
+            "numerator": 64,
+            "denominator": 64,
+            "rate": 1.0
+          }
+        }
+      },
+      "right": {
+        "families": 64,
+        "original_accuracy": {
+          "numerator": 16,
+          "denominator": 64,
+          "rate": 0.25
+        },
+        "causal_target_accuracy": {
+          "numerator": 16,
+          "denominator": 64,
+          "rate": 0.25
+        },
+        "correct_causal_update": {
+          "numerator": 0,
+          "denominator": 64,
+          "rate": 0.0
+        },
+        "nuisance_answer_preservation": {
+          "numerator": 0,
+          "denominator": 64,
+          "rate": 0.0
+        },
+        "correct_nuisance_preservation": {
+          "numerator": 0,
+          "denominator": 64,
+          "rate": 0.0
+        },
+        "consistently_wrong_nuisance_preservation": {
+          "numerator": 0,
+          "denominator": 64,
+          "rate": 0.0
+        },
+        "complete_triplet_correctness": {
+          "numerator": 0,
+          "denominator": 64,
+          "rate": 0.0
+        },
+        "question_switch_correct_different_colors": {
+          "numerator": 0,
+          "denominator": 48,
+          "rate": 0.0
+        },
+        "question_switch_correct_same_colors": {
+          "numerator": 16,
+          "denominator": 16,
+          "rate": 1.0
+        },
+        "conditioned_on_original_correct": {
+          "correct_causal_update": {
+            "numerator": 0,
+            "denominator": 16,
+            "rate": 0.0
+          },
+          "nuisance_answer_preservation": {
+            "numerator": 0,
+            "denominator": 16,
+            "rate": 0.0
+          },
+          "complete_triplet_correctness": {
+            "numerator": 0,
+            "denominator": 16,
+            "rate": 0.0
+          }
+        }
+      }
+    },
+    "target_color": {
+      "blue": {
+        "families": 32,
+        "original_accuracy": {
+          "numerator": 20,
+          "denominator": 32,
+          "rate": 0.625
+        },
+        "causal_target_accuracy": {
+          "numerator": 20,
+          "denominator": 32,
+          "rate": 0.625
+        },
+        "correct_causal_update": {
+          "numerator": 16,
+          "denominator": 32,
+          "rate": 0.5
+        },
+        "nuisance_answer_preservation": {
+          "numerator": 16,
+          "denominator": 32,
+          "rate": 0.5
+        },
+        "correct_nuisance_preservation": {
+          "numerator": 16,
+          "denominator": 32,
+          "rate": 0.5
+        },
+        "consistently_wrong_nuisance_preservation": {
+          "numerator": 0,
+          "denominator": 32,
+          "rate": 0.0
+        },
+        "complete_triplet_correctness": {
+          "numerator": 16,
+          "denominator": 32,
+          "rate": 0.5
+        },
+        "question_switch_correct_different_colors": {
+          "numerator": 0,
+          "denominator": 24,
+          "rate": 0.0
+        },
+        "question_switch_correct_same_colors": {
+          "numerator": 8,
+          "denominator": 8,
+          "rate": 1.0
+        },
+        "conditioned_on_original_correct": {
+          "correct_causal_update": {
+            "numerator": 16,
+            "denominator": 20,
+            "rate": 0.8
+          },
+          "nuisance_answer_preservation": {
+            "numerator": 16,
+            "denominator": 20,
+            "rate": 0.8
+          },
+          "complete_triplet_correctness": {
+            "numerator": 16,
+            "denominator": 20,
+            "rate": 0.8
+          }
+        }
+      },
+      "green": {
+        "families": 32,
+        "original_accuracy": {
+          "numerator": 20,
+          "denominator": 32,
+          "rate": 0.625
+        },
+        "causal_target_accuracy": {
+          "numerator": 19,
+          "denominator": 32,
+          "rate": 0.59375
+        },
+        "correct_causal_update": {
+          "numerator": 16,
+          "denominator": 32,
+          "rate": 0.5
+        },
+        "nuisance_answer_preservation": {
+          "numerator": 16,
+          "denominator": 32,
+          "rate": 0.5
+        },
+        "correct_nuisance_preservation": {
+          "numerator": 16,
+          "denominator": 32,
+          "rate": 0.5
+        },
+        "consistently_wrong_nuisance_preservation": {
+          "numerator": 0,
+          "denominator": 32,
+          "rate": 0.0
+        },
+        "complete_triplet_correctness": {
+          "numerator": 16,
+          "denominator": 32,
+          "rate": 0.5
+        },
+        "question_switch_correct_different_colors": {
+          "numerator": 0,
+          "denominator": 24,
+          "rate": 0.0
+        },
+        "question_switch_correct_same_colors": {
+          "numerator": 8,
+          "denominator": 8,
+          "rate": 1.0
+        },
+        "conditioned_on_original_correct": {
+          "correct_causal_update": {
+            "numerator": 16,
+            "denominator": 20,
+            "rate": 0.8
+          },
+          "nuisance_answer_preservation": {
+            "numerator": 16,
+            "denominator": 20,
+            "rate": 0.8
+          },
+          "complete_triplet_correctness": {
+            "numerator": 16,
+            "denominator": 20,
+            "rate": 0.8
+          }
+        }
+      },
+      "red": {
+        "families": 32,
+        "original_accuracy": {
+          "numerator": 20,
+          "denominator": 32,
+          "rate": 0.625
+        },
+        "causal_target_accuracy": {
+          "numerator": 22,
+          "denominator": 32,
+          "rate": 0.6875
+        },
+        "correct_causal_update": {
+          "numerator": 16,
+          "denominator": 32,
+          "rate": 0.5
+        },
+        "nuisance_answer_preservation": {
+          "numerator": 16,
+          "denominator": 32,
+          "rate": 0.5
+        },
+        "correct_nuisance_preservation": {
+          "numerator": 16,
+          "denominator": 32,
+          "rate": 0.5
+        },
+        "consistently_wrong_nuisance_preservation": {
+          "numerator": 0,
+          "denominator": 32,
+          "rate": 0.0
+        },
+        "complete_triplet_correctness": {
+          "numerator": 16,
+          "denominator": 32,
+          "rate": 0.5
+        },
+        "question_switch_correct_different_colors": {
+          "numerator": 0,
+          "denominator": 24,
+          "rate": 0.0
+        },
+        "question_switch_correct_same_colors": {
+          "numerator": 8,
+          "denominator": 8,
+          "rate": 1.0
+        },
+        "conditioned_on_original_correct": {
+          "correct_causal_update": {
+            "numerator": 16,
+            "denominator": 20,
+            "rate": 0.8
+          },
+          "nuisance_answer_preservation": {
+            "numerator": 16,
+            "denominator": 20,
+            "rate": 0.8
+          },
+          "complete_triplet_correctness": {
+            "numerator": 16,
+            "denominator": 20,
+            "rate": 0.8
+          }
+        }
+      },
+      "yellow": {
+        "families": 32,
+        "original_accuracy": {
+          "numerator": 20,
+          "denominator": 32,
+          "rate": 0.625
+        },
+        "causal_target_accuracy": {
+          "numerator": 19,
+          "denominator": 32,
+          "rate": 0.59375
+        },
+        "correct_causal_update": {
+          "numerator": 16,
+          "denominator": 32,
+          "rate": 0.5
+        },
+        "nuisance_answer_preservation": {
+          "numerator": 16,
+          "denominator": 32,
+          "rate": 0.5
+        },
+        "correct_nuisance_preservation": {
+          "numerator": 16,
+          "denominator": 32,
+          "rate": 0.5
+        },
+        "consistently_wrong_nuisance_preservation": {
+          "numerator": 0,
+          "denominator": 32,
+          "rate": 0.0
+        },
+        "complete_triplet_correctness": {
+          "numerator": 16,
+          "denominator": 32,
+          "rate": 0.5
+        },
+        "question_switch_correct_different_colors": {
+          "numerator": 0,
+          "denominator": 24,
+          "rate": 0.0
+        },
+        "question_switch_correct_same_colors": {
+          "numerator": 8,
+          "denominator": 8,
+          "rate": 1.0
+        },
+        "conditioned_on_original_correct": {
+          "correct_causal_update": {
+            "numerator": 16,
+            "denominator": 20,
+            "rate": 0.8
+          },
+          "nuisance_answer_preservation": {
+            "numerator": 16,
+            "denominator": 20,
+            "rate": 0.8
+          },
+          "complete_triplet_correctness": {
+            "numerator": 16,
+            "denominator": 20,
+            "rate": 0.8
+          }
+        }
+      }
+    },
+    "same_color": {
+      "False": {
+        "families": 96,
+        "original_accuracy": {
+          "numerator": 48,
+          "denominator": 96,
+          "rate": 0.5
+        },
+        "causal_target_accuracy": {
+          "numerator": 64,
+          "denominator": 96,
+          "rate": 0.6666666666666666
+        },
+        "correct_causal_update": {
+          "numerator": 48,
+          "denominator": 96,
+          "rate": 0.5
+        },
+        "nuisance_answer_preservation": {
+          "numerator": 48,
+          "denominator": 96,
+          "rate": 0.5
+        },
+        "correct_nuisance_preservation": {
+          "numerator": 48,
+          "denominator": 96,
+          "rate": 0.5
+        },
+        "consistently_wrong_nuisance_preservation": {
+          "numerator": 0,
+          "denominator": 96,
+          "rate": 0.0
+        },
+        "complete_triplet_correctness": {
+          "numerator": 48,
+          "denominator": 96,
+          "rate": 0.5
+        },
+        "question_switch_correct_different_colors": {
+          "numerator": 0,
+          "denominator": 96,
+          "rate": 0.0
+        },
+        "question_switch_correct_same_colors": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "conditioned_on_original_correct": {
+          "correct_causal_update": {
+            "numerator": 48,
+            "denominator": 48,
+            "rate": 1.0
+          },
+          "nuisance_answer_preservation": {
+            "numerator": 48,
+            "denominator": 48,
+            "rate": 1.0
+          },
+          "complete_triplet_correctness": {
+            "numerator": 48,
+            "denominator": 48,
+            "rate": 1.0
+          }
+        }
+      },
+      "True": {
+        "families": 32,
+        "original_accuracy": {
+          "numerator": 32,
+          "denominator": 32,
+          "rate": 1.0
+        },
+        "causal_target_accuracy": {
+          "numerator": 16,
+          "denominator": 32,
+          "rate": 0.5
+        },
+        "correct_causal_update": {
+          "numerator": 16,
+          "denominator": 32,
+          "rate": 0.5
+        },
+        "nuisance_answer_preservation": {
+          "numerator": 16,
+          "denominator": 32,
+          "rate": 0.5
+        },
+        "correct_nuisance_preservation": {
+          "numerator": 16,
+          "denominator": 32,
+          "rate": 0.5
+        },
+        "consistently_wrong_nuisance_preservation": {
+          "numerator": 0,
+          "denominator": 32,
+          "rate": 0.0
+        },
+        "complete_triplet_correctness": {
+          "numerator": 16,
+          "denominator": 32,
+          "rate": 0.5
+        },
+        "question_switch_correct_different_colors": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "question_switch_correct_same_colors": {
+          "numerator": 32,
+          "denominator": 32,
+          "rate": 1.0
+        },
+        "conditioned_on_original_correct": {
+          "correct_causal_update": {
+            "numerator": 16,
+            "denominator": 32,
+            "rate": 0.5
+          },
+          "nuisance_answer_preservation": {
+            "numerator": 16,
+            "denominator": 32,
+            "rate": 0.5
+          },
+          "complete_triplet_correctness": {
+            "numerator": 16,
+            "denominator": 32,
+            "rate": 0.5
+          }
+        }
+      }
+    }
+  }
+}

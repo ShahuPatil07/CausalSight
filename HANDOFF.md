@@ -1,50 +1,43 @@
-# CausalSight handoff
+# CausalSight handoff ? 2026-10-11
 
-## Research direction
+Read README.md, PLAN.md, research/LOG.md and research/EXP-005.md. Preserve paired data, raw responses and negative/ceiling findings. All compute must remain free. Leave active VS Code alone. Do not substitute local thinking weights for Instruct FP16 without a separately documented configuration.
 
-Read README.md, PLAN.md and research/LOG.md. The shape/color task is a pipeline pilot, not a validated benchmark. Preserve raw outputs, paired structure and negative findings. The README was left as found during this continuation.
+## Current outcome: EXP-005 complete
 
-## Current state (2026-10-09)
+User ran the full notebook on Colab and supplied notebooks/EXP-005-colab-d4f38207-10d95700.zip. Results were imported and independently recomputed. No further inference or parser changes occurred during import.
 
-- Dataset data/pilot-v0: seed 17, three scenes, nine PNGs. Do not regenerate this version.
-- Read-only checks confirmed all six interventions change only the intended color field; pixel differences remain within the intended object. All three targets happen to be on the right, so this sample does not counterbalance position.
-- Ollama and Hugging Face adapters preserve paired metadata, raw responses, errors and latency. Output files refuse overwrite. --pair-id selects a scene triplet.
-- Runner now flushes each completed row and prints its status/latency. In-flight requests are not preserved on interruption. Python compilation passed; no formal test suite was run.
-- Evaluator reports separate descriptive pilot metrics. No scientific evaluation is complete.
+- Model: Qwen/Qwen3-VL-2B-Instruct revision 89644892e4d85e24eaac8bacfd4f463576704203, FP16/SDPA, greedy decoding, 256-token budget, Tesla T4, Transformers 4.57.1, PyTorch 2.11.0+cu130, Accelerate 1.15.0.
+- Development: 64/64 visual answers correct, operational gate passed, real freeze exists in imported artifacts.
+- Evaluation: 512/512 visual answers correct; original accuracy, correct causal update, nuisance preservation and complete-triplet correctness each 128/128. Different-color question switches 96/96; same-color switches 32/32. No missing/error/empty/parse/truncation failures.
+- Text-only: two actual requests per split, projected onto repeated prompts. Circle answer Red is parsed. Square answer The square is blue. is rejected as prose by the frozen strict parser. Evaluation original accuracy 16/128 (12.5%), zero correct updates/triplets, 256/512 projected parse failures. This is a format-sensitive protocol score, not independent repeated trials or pure semantic accuracy. Keep the parser unchanged.
+- Metadata shortcuts: constant-red 25%, leftmost-object 62.5%, distractor-object 25% original accuracy. Fixed-red has 100% nuisance invariance but zero correct triplets/updates.
+- Conclusion: this simple synthetic grid reaches a ceiling for the tested model. No broad grounding or internal causal-mechanism claim; increase task difficulty in a new experiment instead of tuning against EXP-005.
 
-## EXP-001 outcome
+## Artifacts and provenance
 
-qwen3-vl:2b finished downloading (1.9 GB, ID prefix 0635d9d857d4). One CPU triplet was attempted using the command in research/LOG.md. Available RAM fell from 4.23 GiB to 0.60 GiB (96% usage). The runner was interrupted and the model unloaded. results/raw/EXP-001-qwen3vl-2b-smoke.jsonl is empty and must remain preserved; no metrics exist. No model-behavior results or completed-response latencies exist. The first request's server-side outcome is unknown.
+- Source ZIP preserved under notebooks. SHA-256: 11d7f351e6cf29d18f9ba60122467c81d35c8422dfc20193829ccaaea53999ec.
+- Original imported snapshots: results/raw/EXP-005-colab-d4f38207/. Includes development/evaluation raw visual answers, text-only source requests/projections, environment, freeze and original metrics.
+- Recomputed metrics and provenance: results/processed/EXP-005-colab-d4f38207/. Import validated 441 bundled source/data hashes, config/manifest/image hashes, frozen model/runtime identities, complete raw rows, text-only source links and metric equality for both splits.
+- Combined comparison: results/processed/EXP-005-binding-v1-baselines/report.md and comparison.json. Original heuristic-only report preserved as heuristic-report.md; summary.json remains the original shortcut-only summary.
+- Reproducible importer: scripts/import_binding_results.py. It refuses to overwrite imported run directories. Do not rerun against existing output directories or delete immutable outputs to force it.
 
-No active inference or pull session remains. ollama ps was empty after stopping. Last RAM sample: 6.87 GiB available of 15.62 GiB. This is not a sustained-headroom measurement.
+## Implementation
 
-## Constraints
+- data/binding-v1: immutable seed 11017, 16 development families, 128 evaluation families, four inputs per family, 576 rows and 432 PNGs. Evaluation has two renderings per 64 factorial cells; retain 32 same-color originals. Dataset audit passed; no regeneration.
+- generate_binding.py generates/audits; evaluate_binding.py preserves full manifest denominators, strict parsing, separate paired metrics, missing/error diagnostics and strata.
+- run_binding.py records hashes/revision/runtime, flushes raw rows, gates evaluation on development, and supports failure-preserving --resume with unchanged model/runtime/config. Failed requests are never selectively retried.
+- configs/experiments/EXP-005-binding-v1.json is the original protocol. No adjustments were made after evaluation outcomes.
+- Nine offline regression tests passed during implementation. Test model responses were synthetic fixtures in temporary directories, separate from actual Colab results.
+- notebooks/CausalSight_binding_v1_free_colab.ipynb is the full experiment. scripts/build_binding_notebook.py packages it. Avoid rebuilding an executed notebook if outputs need preservation; the ZIP remains the primary run artifact.
 
-- CPU-only machine. Leave active VS Code alone; helper processes are not separate windows.
-- Edge was previously closed at user request. No unrelated applications were closed during this continuation.
-- Previous Ollama models were deleted at the user's request; only the replacement 2B model is installed.
-- Free Hugging Face account: verify current access/billing before remote requests; do not assume inference is free.
-- Do not scale after memory pressure without establishing safe feasibility.
+## Earlier preserved history
 
-## Next work
+pilot-v0 (seed 17, three triplets) remains untouched. EXP-001 aborted for RAM pressure; EXP-002 exhausted 32 tokens with empty final answers; EXP-003 completed one triplet at 256 tokens (yellow / blue / yellow), validating only the loop. The original three-image Colab smoke notebook remains distinct from the full EXP-005 notebook.
 
-1. Check sustained available RAM and determine whether another local attempt is feasible. Document context/runtime changes explicitly.
-2. If retrying, use a new path such as results/raw/EXP-002-qwen3vl-2b-smoke.jsonl. Never overwrite EXP-001. Keep the run to pilot-00000 and monitor memory.
-3. Inspect all three raw responses and latency before evaluating a complete triplet. Stop/unload if memory pressure recurs.
-4. Before meaningful experiments, review literature, choose a capable feasible runtime, and revisit task, controls, counterbalancing, splits, sample size and uncertainty.
+## Next research work
 
-## Latest continuation: EXP-002, EXP-003 and free cloud route
+Choose a harder diagnostic (counting or spatial/relational evidence are candidates), document hypothesis and new controls/templates before inference, and retain free-only compute. EXP-005 evaluation is now observed development evidence; do not call it an unseen confirmatory test or claim population uncertainty from its fixed grid.
 
-This section supersedes the earlier next-work list and installed model identity above.
+## Git
 
-- User requires completely free compute: no paid APIs, rentals or subscriptions.
-- EXP-002 completed with improved RAM headroom but all three final answers were empty: the 32-token budget was exhausted by reasoning. All failures were preserved and evaluated.
-- Runner supports --max-tokens for both providers and records the chosen budget. Offline adapter checks and compilation passed.
-- EXP-003 used the same triplet and prompts with --max-tokens 256. Final answers yellow / blue / yellow all match expectations. One paired smoke check passes; no research conclusion follows.
-- EXP-003 latencies were approximately five seconds, with 1102 cached prompt tokens each. Do not report these as cold performance.
-- Runtime/model observed now: Ollama 0.40.2 and qwen3-vl:2b digest prefix 6e72c4c9d31b. These differ from earlier handoff metadata; this agent did not update or pull them. Full pre-EXP-003 metadata is in results/raw/EXP-003-qwen3vl-2b-smoke-environment.json.
-- Results for EXP-002 and EXP-003 are saved in raw and processed directories. Model unloaded afterward. No active exec session remains.
-- notebooks/CausalSight_free_colab.ipynb embeds the exact pilot manifest and nine images. It uses public Qwen/Qwen3-VL-2B-Instruct FP16 weights on a free Colab GPU, saves reproducibility metadata/raw outputs/errors, evaluates one triplet and downloads a ZIP. It does not call a hosted inference API.
-- Rebuild the notebook with python scripts/build_colab_notebook.py. All code cells compile and all ten embedded files match original bytes. No actual cloud GPU run has been verified.
-
-Next: user uploads the notebook to colab.research.google.com, selects a free GPU runtime and runs cells in order. Download results before disconnecting. Free GPU allocation is variable; retry later if unavailable and never buy compute. Keep Instruct/FP16 cloud results separate from thinking/quantized local results. Review literature, controls, splits and counterbalancing before scaling into a meaningful experiment.
+Prior pipeline commit bc036af was pushed to main on 2026-10-09. This handoff accompanies the EXP-005 implementation and validated-result progress commit requested by the user. The user plans to revisit the next experiment tomorrow; no further inference or task expansion is pending in this session.

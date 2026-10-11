@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-11",
+  "experiment": "EXP-005-binding-v1",
+  "implementation": "complete",
+  "offline_tests_passed": 9,
+  "heuristic_baseline_results": "results/processed/EXP-005-binding-v1-baselines/report.md",
+  "model_inference": "complete",
+  "development_freeze_created": true,
+  "paid_compute_used": false,
+  "cloud_notebook": "notebooks/CausalSight_binding_v1_free_colab.ipynb",
+  "cloud_gpu_execution_verified": true,
+  "model_results_run": "EXP-005-colab-d4f38207",
+  "import_validation": "results/processed/EXP-005-colab-d4f38207/import-validation.json",
+  "model_evaluation_visual_answers_correct": 512,
+  "text_only_original_accuracy_strict_parser": 0.125,
+  "previous_local_attempt_error": "RuntimeError: No free GPU runtime available"
+}

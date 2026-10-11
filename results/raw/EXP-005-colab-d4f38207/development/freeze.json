@@ -1,0 +1,17 @@
+{
+  "config_sha256": "4a52d39af8e6522999385ddc8a6ee570f3564eedb20abdb8b89423b55decf63b",
+  "adapter": {
+    "model": "Qwen/Qwen3-VL-2B-Instruct",
+    "revision": "89644892e4d85e24eaac8bacfd4f463576704203",
+    "torch": "2.11.0+cu130",
+    "transformers": "4.57.1",
+    "accelerate": "1.15.0",
+    "gpu": "Tesla T4",
+    "vram_bytes": 15637086208,
+    "cuda": "13.0",
+    "dtype": "float16",
+    "attention": "sdpa"
+  },
+  "model_revision": "89644892e4d85e24eaac8bacfd4f463576704203",
+  "rule": "No request errors, missing rows, empty answers, truncation or parse failures; no accuracy threshold."
+}

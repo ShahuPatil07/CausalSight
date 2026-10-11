@@ -6,3 +6,8 @@
 *.jsonl text eol=lf
 *.ipynb text eol=lf
 *.png binary
+# Preserve bytes of hashed experiment inputs and imported source artifacts.
+configs/experiments/*.json -text
+data/binding-v1/audit.json -text
+results/raw/EXP-005-colab-d4f38207/** -text
+notebooks/*.zip binary

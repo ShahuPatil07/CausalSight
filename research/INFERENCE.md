@@ -2,6 +2,21 @@
 
 **Current constraint:** All project compute must be free. Use local Ollama or a free Colab GPU; do not invoke paid APIs, rent GPUs or purchase subscriptions.
 
+## EXP-005 balanced binding experiment
+
+**Completed run:** EXP-005-colab-d4f38207 was imported from the user's ZIP and validated against dataset/source/config/image hashes and the development freeze. All 512 evaluation visual answers were correct. Updated model/text-only/shortcut comparison: `results/processed/EXP-005-binding-v1-baselines/report.md`. Raw source artifacts remain preserved. `scripts/import_binding_results.py` recomputes metrics and refuses to overwrite an existing imported run. Text-only projections share two source requests; one prose response fails the frozen parser.
+
+Use `notebooks/CausalSight_binding_v1_free_colab.ipynb` for the full experiment. The earlier `CausalSight_free_colab.ipynb` remains the three-image pilot smoke notebook. Upload the new notebook to Colab, select a free GPU, run development, inspect its report, then run evaluation if `freeze.json` exists. Download the results ZIP before disconnecting; the download cell also works for partial runs. The model/configuration differs from the old Ollama thinking smoke check.
+
+On a suitable free GPU with notebook dependencies installed:
+
+```powershell
+python -m causalsight.run_binding --config configs/experiments/EXP-005-binding-v1.json --output-dir results/raw/EXP-005-binding-v1/development --split development
+python -m causalsight.run_binding --config configs/experiments/EXP-005-binding-v1.json --output-dir results/raw/EXP-005-binding-v1/evaluation --split evaluation
+```
+
+Add `--resume` only to continue the same artifacts/config/model/runtime. Saved failures remain immutable. The evaluator retains missing expected rows in denominators; partial reports are not complete experiments. Do not manually create a development freeze to bypass failures. Full protocol and baseline results: `research/EXP-005.md`.
+
 ## Free cloud GPU notebook
 
 Upload `notebooks/CausalSight_free_colab.ipynb` at [Google Colab](https://colab.research.google.com/), select **Runtime → Change runtime type → GPU** on the free tier, and run the cells in order. The original pilot-v0 images and manifest are embedded; no separate dataset upload or HF token is needed. Download the results ZIP before disconnecting.

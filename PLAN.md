@@ -8,6 +8,8 @@ The README is the research charter. This plan turns it into a small sequence of 
 
 ## Current stage: validate the experiment loop
 
+**Latest progress (2026-10-11):** EXP-005 completed on the user's Colab Tesla T4. Imported run EXP-005-colab-d4f38207 matches all 441 bundled file hashes; locally recomputed metrics match captured metrics. Qwen3-VL-2B-Instruct answered all 512 evaluation visual inputs correctly, including 128/128 correct triplets and 96/96 different-color question switches. Text-only original accuracy is 12.5% under the frozen parser: one of two unique responses is prose and rejected. Metadata shortcuts score 25%, 62.5%, and 25% original accuracy. This is a ceiling result on the simple synthetic task. See `research/EXP-005.md`; next design a harder diagnostic with new templates and controls, rather than claiming broad grounding.
+
 **Progress (2026-10-09):** One local triplet completed and evaluated in EXP-003 after increasing the generation budget to 256. EXP-001 was interrupted for memory pressure; EXP-002 produced truncated, empty final answers. These outcomes are preserved. The local inference/evaluation loop now has a successful smoke check, but scientific model/task adequacy remains unestablished. A self-contained free Colab GPU notebook is prepared and locally validated; cloud execution is pending. All compute must be completely free, per the user.
 
 **Pilot candidate (provisional):** controlled shape-color scenes with a question about the color of one named shape. For each scene, generate:

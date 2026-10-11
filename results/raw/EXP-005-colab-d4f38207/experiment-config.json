@@ -1,0 +1,16 @@
+{
+  "experiment": "EXP-005-binding-v1",
+  "dataset": "data/binding-v1/examples.jsonl",
+  "dataset_sha256": "f4a20ab4aae2c0880f42f3d59f63d5f5b2cb4f4480ef6defb3490f0b1b1ef59d",
+  "provider": "transformers",
+  "model": "Qwen/Qwen3-VL-2B-Instruct",
+  "max_tokens": 256,
+  "expected_rows": {
+    "development": 64,
+    "evaluation": 512
+  },
+  "parser": "binding-1.0.0",
+  "split_policy": "16 development families; 128 balanced evaluation families; no training",
+  "seed": 11017,
+  "compute_policy": "free GPU only; no paid API or automatic model substitution"
+}

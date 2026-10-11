@@ -1,0 +1,22 @@
+{
+  "source_archive": "notebooks/EXP-005-colab-d4f38207-10d95700.zip",
+  "source_archive_sha256": "11d7f351e6cf29d18f9ba60122467c81d35c8422dfc20193829ccaaea53999ec",
+  "run": "EXP-005-colab-d4f38207",
+  "bundled_files_verified": 441,
+  "metrics_recomputed_and_equal": true,
+  "development_gate_verified": true,
+  "model_revision": "89644892e4d85e24eaac8bacfd4f463576704203",
+  "adapter": {
+    "model": "Qwen/Qwen3-VL-2B-Instruct",
+    "revision": "89644892e4d85e24eaac8bacfd4f463576704203",
+    "torch": "2.11.0+cu130",
+    "transformers": "4.57.1",
+    "accelerate": "1.15.0",
+    "gpu": "Tesla T4",
+    "vram_bytes": 15637086208,
+    "cuda": "13.0",
+    "dtype": "float16",
+    "attention": "sdpa"
+  },
+  "config_sha256": "4a52d39af8e6522999385ddc8a6ee570f3564eedb20abdb8b89423b55decf63b"
+}
